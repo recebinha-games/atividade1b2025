@@ -6,7 +6,7 @@ public class MovimentoPlayer : MonoBehaviour
     
     private float velocidade;
 
-    public bool andando = false;
+    public bool Andando = false;
      void Start()
      {
          velocidade = gameObject.GetComponent<Personagem>().Velocidade();
@@ -16,14 +16,14 @@ public class MovimentoPlayer : MonoBehaviour
     {
         Vector3 posicao = transform.position;
 
-        andando = false;
+        Andando = false;
         
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             posicao.x = posicao.x + velocidade * Time.deltaTime;
             posicao.z = posicao.z + velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 45, 0);
-            andando =  true;
+            Andando =  true;
         }
         else
             
@@ -32,7 +32,7 @@ public class MovimentoPlayer : MonoBehaviour
             posicao.x = posicao.x + velocidade * Time.deltaTime;
             posicao.z = posicao.z - velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 135, 0);
-            andando =  true;
+            Andando =  true;
         }
         else    
         
@@ -41,7 +41,7 @@ public class MovimentoPlayer : MonoBehaviour
             posicao.x = posicao.x - velocidade * Time.deltaTime;
             posicao.z = posicao.z - velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, -135, 0);
-            andando =  true;
+            Andando =  true;
         }
         else   
             
@@ -50,7 +50,7 @@ public class MovimentoPlayer : MonoBehaviour
             posicao.x = posicao.x - velocidade * Time.deltaTime;
             posicao.z = posicao.z + velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, -45, 0);
-            andando =  true;
+           Andando = true;
         }
         else   
             
@@ -59,7 +59,7 @@ public class MovimentoPlayer : MonoBehaviour
         {
             posicao.x = posicao.x - velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, -90, 0);
-            andando =  true;
+            Andando =  true;
         }
         else
         //direira  X+
@@ -67,7 +67,7 @@ public class MovimentoPlayer : MonoBehaviour
         {
             posicao.x = posicao.x + velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 90, 0);
-            andando =  true;
+            Andando =  true;
         }
         else
         //cima  Z+
@@ -75,7 +75,7 @@ public class MovimentoPlayer : MonoBehaviour
         {
             posicao.z = posicao.z + velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            andando =  true;
+            Andando =  true;
         }
         else
         //baixo Z-
@@ -83,7 +83,7 @@ public class MovimentoPlayer : MonoBehaviour
         {
             posicao.z = posicao.z - velocidade * Time.deltaTime;
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            andando =  true;
+            Andando =  true;
         }
         
         transform.position = posicao;
